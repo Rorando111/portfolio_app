@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Your Name - Portfolio | Web Developer & Designer">
+   <meta name="keywords" content="web developer, designer, portfolio, projects">
+   <title>Your Name - Portfolio</title>
+
+   <!-- CSS Files -->
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/variables.css">
+   <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/components/navigation.css">
+   <link rel="stylesheet" href="css/components/hero.css">
+   <link rel="stylesheet" href="css/components/about.css">
+   <link rel="stylesheet" href="css/components/projects.css">
+   <link rel="stylesheet" href="css/components/contact.css">
+   <link rel="stylesheet" href="css/components/modal.css">
+   <link rel="stylesheet" href="css/styles.css">
+
+   <!-- Fonts (Google Fonts) -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Loading Screen -->
+   <div class="page-loader">
+       <div class="loader-spinner"></div>
+   </div>
+
+   <!-- Book Container -->
+   <div class="book-container">
+       <!-- Navigation Tabs -->
+       <nav class="book-nav">
+           <div class="nav-tabs">
+               <button class="nav-tab active" data-page="cover">Cover</button>
+               <button class="nav-tab" data-page="about">About</button>
+               <button class="nav-tab" data-page="projects">Projects</button>
+               <button class="nav-tab" data-page="contact">Contact</button>
+           </div>
+       </nav>
+
+       <!-- Book Pages -->
+       <div class="book-pages">
+           <!-- Cover Page -->
+           <div id="cover-page" class="book-page active">
+               <div class="page-content">
+                   <div class="page-left">
+                       <div class="cover-logo">
+                           <h1>Your Name</h1>
+                           <div class="tagline">Web Developer & Designer</div>
+                       </div>
+                   </div>
+                   <div class="page-right">
+                       <div class="cover-cta">
+                           <h2>Welcome to My Portfolio</h2>
+                           <p>Discover my journey in web development and design. Navigate through the pages to learn more about my skills, projects, and experience.</p>
+                           <button class="cta-button" onclick="flipToPage('about')">Start Exploring</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <!-- About Page -->
+           <div id="about-page" class="book-page">
+               <div class="page-content">
+                   <div class="page-left">
+                       <div class="about-text">
+                           <h2>About Me</h2>
+                           <p>I'm a passionate developer with specialization in python development. I love creating clean, efficient, and user-friendly applications that deliver exceptional experiences.</p>
+                           <p>With a strong foundation in both front-end and back-end development, I enjoy tackling complex problems and turning ideas into beautiful, functional solutions.</p>
+
+                           <h3>Skills & Technologies</h3>
+                           <div class="skills-grid">
+                               <span class="skill-tag">JavaScript</span>
+                               <span class="skill-tag">React</span>
+                               <span class="skill-tag">Node.js</span>
+                               <span class="skill-tag">Python</span>
+                               <span class="skill-tag">CSS/SCSS</span>
+                               <span class="skill-tag">HTML5</span>
+                               <span class="skill-tag">Git</span>
+                               <span class="skill-tag">Responsive Design</span>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="page-right">
+                       <div class="about-image">
+                           <div class="image-placeholder">
+                               <div>Your Photo</div>
+                               <small>Add your professional photo here</small>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <!-- Projects Page -->
+           <div id="projects-page" class="book-page">
+               <div class="page-content">
+                   <div class="page-left">
+                       <div class="projects-intro">
+                           <h2>My Projects</h2>
+                           <p>Here are some of the projects I've worked on. Each project represents a unique challenge and showcases different aspects of my skills and creativity.</p>
+                       </div>
+                   </div>
+                   <div class="page-right">
+                       <div class="project-card">
+                           <div class="project-type">Web Application</div>
+                           <h3>Project One</h3>
+                           <p class="project-description">A responsive web application built with modern technologies, featuring clean design and smooth user interactions.</p>
+                           <div class="project-gallery">
+                               <div class="gallery-thumbnails">
+                                   <img src="images/Capstone_Images/Picture1.png" alt="Project 1 thumbnail" class="thumbnail" onclick="showImage('webapp')">
+                                   <img src="images/Capstone_Images/Picture2.png" alt="Project 1 thumbnail" class="thumbnail" onclick="showImage('webapp')">
+                                   <img src="images/Capstone_Images/Picture3.png" alt="Project 1 thumbnail" class="thumbnail" onclick="showImage('webapp')">
+                               </div>
+                               <div class="gallery-main">
+                                   <img id="main-image" src="images/Capstone_Images/Picture1.png" alt="Main project image">
+                               </div>
+                           </div>
+                       </div>
+
+                       <div class="project-card">
+                           <div class="project-type">Mobile App</div>
+                           <h3>Project Two</h3>
+                           <p class="project-description">A mobile-first application designed for optimal user experience across all devices and screen sizes.</p>
+                           <img src="images/Capstone_Images/Picture4.png" alt="Project 2" class="project-img">
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <!-- Contact Page -->
+           <div id="contact-page" class="book-page">
+               <div class="page-content">
+                   <div class="page-left">
+                       <div class="contact-info">
+                           <h2>Get In Touch</h2>
+                           <p>Ready to work together? I'd love to hear from you. Send me a message and let's discuss your next project.</p>
+
+                           <div class="contact-details">
+                               <div class="contact-item">
+                                   <strong>Email</strong>
+                                   <a href="mailto:your.email@example.com">your.email@example.com</a>
+                               </div>
+                               <div class="contact-item">
+                                   <strong>LinkedIn</strong>
+                                   <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+                               </div>
+                               <div class="contact-item">
+                                   <strong>GitHub</strong>
+                                   <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="page-right">
+                       <form class="contact-form">
+                           <h3>Send Message</h3>
+                           <div class="form-group">
+                               <label for="name">Name</label>
+                               <input type="text" id="name" name="name" required>
+                           </div>
+                           <div class="form-group">
+                               <label for="email">Email</label>
+                               <input type="email" id="email" name="email" required>
+                           </div>
+                           <div class="form-group">
+                               <label for="message">Message</label>
+                               <textarea id="message" name="message" rows="5" required></textarea>
+                           </div>
+                           <button type="submit" class="submit-btn">Send Message</button>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <!-- Image Modal -->
+   <div id="imageModal" class="image-modal">
+       <div class="modal-content">
+           <span class="close-modal" onclick="closeModal()">&times;</span>
+           <img id="modalImage" src="" alt="Modal image">
+       </div>
+   </div>
+
+   <!-- JavaScript -->
+   <script src="js/config.js"></script>
+   <script type="module" src="js/main.js"></script>
+</body>
+</html>

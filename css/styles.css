@@ -1,0 +1,180 @@
+/* ==========================================
+   FLIPBOOK PORTFOLIO: Main Styles
+   Professional design with subtle animations
+   ========================================== */
+
+/* CSS Custom Properties (Variables) */
+:root {
+  /* Colors - Professional palette */
+  --primary-color: #2c3e50;      /* Dark blue-gray */
+  --secondary-color: #34495e;     /* Lighter blue-gray */
+  --accent-color: #3498db;       /* Blue accent */
+  --text-primary: #2c3e50;       /* Main text */
+  --text-secondary: #7f8c8d;     /* Secondary text */
+  --background: #ffffff;          /* Main background */
+  --surface: #f8f9fa;            /* Card backgrounds */
+  --border: #e9ecef;             /* Borders */
+  --shadow: rgba(0, 0, 0, 0.1);  /* Subtle shadows */
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Layout */
+  --page-width: 1200px;
+  --page-height: 700px;
+  --border-radius: 8px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================
+   BOOK PAGES: Page wrapper and animations
+   ========================================== */
+.book-pages {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.book-page.leaving {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+/* Left and Right Pages */
+.page-left,
+.page-right {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* ==========================================
+   LOADING ANIMATION
+   ========================================== */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--surface);
+  border-top: 3px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN: Mobile optimization
+   ========================================== */
+@media (max-width: 768px) {
+  .book-nav {
+    width: 100%;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+  }
+  
+  .nav-tabs {
+    justify-content: center;
+    overflow-x: auto;
+    padding: 0 1rem;
+  }
+  
+  .nav-tab {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .page-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 80px;
+  }
+  
+  .page-left,
+  .page-right {
+    padding: 1rem;
+  }
+  
+  .cover-logo h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cover-cta h2 {
+    font-size: 1.8rem;
+  }
+  
+  .about-text h2,
+  .projects-intro h2,
+  .contact-info h2 {
+    font-size: 2rem;
+  }
+  
+  .gallery-thumbnails {
+    justify-content: center;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-page {
+    padding: 1rem;
+  }
+  
+  .page-content {
+    padding: 1.5rem;
+  }
+  
+  .cover-logo h1 {
+    font-size: 2rem;
+  }
+  
+  .cover-cta h2 {
+    font-size: 1.5rem;
+  }
+  
+  .about-text h2,
+  .projects-intro h2,
+  .contact-info h2 {
+    font-size: 1.8rem;
+  }
+}
